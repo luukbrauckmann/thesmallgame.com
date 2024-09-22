@@ -1,20 +1,36 @@
 {
-  "name": "thesmallgame",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.9.3",
-    "astro": "^4.15.8",
-    "typescript": "^5.6.2"
-  },
-  "devDependencies": {
-    "@astrojs/ts-plugin": "^1.10.2"
-  }
+	"name": "thesmallgame",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"format": "prettier --write ."
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.9.3",
+		"@astrojs/cloudflare": "^11.0.5",
+		"@astrojs/preact": "^3.5.3",
+		"@rollup/plugin-graphql": "^2.0.4",
+		"accept-language-parser": "^1.5.0",
+		"astro": "^4.15.8",
+		"graphql": "^16.9.0",
+		"preact": "^10.24.0",
+		"sass": "^1.79.3",
+		"typescript": "^5.6.2"
+	},
+	"devDependencies": {
+		"@astrojs/ts-plugin": "^1.10.2",
+		"@types/accept-language-parser": "^1.5.6",
+		"prettier": "^3.3.3",
+		"prettier-plugin-astro": "^0.14.1",
+		"prettier-plugin-css-order": "^2.1.2"
+	},
+	"overrides": {
+		"react": "npm:@preact/compat@latest",
+		"react-dom": "npm:@preact/compat@latest"
+	}
 }

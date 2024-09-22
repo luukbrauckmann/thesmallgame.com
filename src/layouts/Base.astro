@@ -1,0 +1,48 @@
+---
+import { MainFooter, MainHeader } from '@components';
+import '@styles';
+import type { Locale } from '@types';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<html lang={locale}>
+	<head>
+		<meta charset="utf-8" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width"
+		/>
+		<meta
+			name="generator"
+			content={Astro.generator}
+		/>
+
+		<title>Welcome • The Small Game</title>
+	</head>
+	<body>
+		<MainHeader />
+		<main>
+			<slot />
+		</main>
+		<MainFooter />
+	</body>
+</html>
+
+<style>
+	header {
+		display: flex;
+		justify-content: end;
+		column-gap: 1.5rem;
+		flex-wrap: wrap;
+	}
+</style>

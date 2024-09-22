@@ -1,0 +1,4 @@
+fragment HeadingBlock on HeadingRecord {
+    level
+    text
+}

@@ -1,0 +1,13 @@
+#import '@blocks/CardBlock/CardBlock.fragment.gql'
+#import '@blocks/HeadingBlock/HeadingBlock.fragment.gql'
+
+query Home($locale: SiteLocale!) {
+  page: home(locale: $locale) {
+    title
+    body {
+        __typename
+        ...CardBlock
+        ...HeadingBlock
+    }
+  }
+}

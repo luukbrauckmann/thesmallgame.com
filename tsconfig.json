@@ -1,11 +1,30 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "checkJs": true,
-    "plugins": [
+	"extends": "astro/tsconfigs/strictest",
+	"compilerOptions": {
+		"plugins": [
 			{
 				"name": "@astrojs/ts-plugin"
 			}
-		]
-  }
+		],
+		"baseUrl": ".",
+		"paths": {
+		  "@blocks": ["./src/blocks"],
+			"@blocks/*": ["./src/blocks/*"],
+			"@components": ["./src/components"],
+			"@components/*": ["./src/components/*"],
+			"@data": ["./src/data"],
+			"@data/*": ["./src/data/*"],
+			"@layouts": ["./src/layouts"],
+			"@layouts/*": ["./src/layouts/*"],
+			"@scripts": ["./src/scripts"],
+			"@scripts/*": ["./src/scripts/*"],
+			"@styles": ["./src/styles"],
+			"@styles/*": ["./src/styles/*"],
+			"@types": ["./src/types"],
+			"@types/*": ["./src/types/*"]
+		},
+		"checkJs": true,
+		"jsx": "react-jsx",
+		"jsxImportSource": "preact"
+	}
 }
