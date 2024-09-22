@@ -1,13 +1,16 @@
 ---
+import { Seo } from '@datocms/astro';
 import { MainFooter, MainHeader } from '@components';
 import '@styles';
 import type { Locale } from '@types';
 
 interface Props {
 	locale: Locale;
+	site: any;
+	page: any;
 }
 
-const { locale } = Astro.props;
+const { locale, site, page } = Astro.props;
 ---
 
 <html lang={locale}>
@@ -27,7 +30,7 @@ const { locale } = Astro.props;
 			content={Astro.generator}
 		/>
 
-		<title>Welcome • The Small Game</title>
+		<Seo data={[...page.seo, ...site.favicon]} />
 	</head>
 	<body>
 		<MainHeader />

@@ -2,12 +2,24 @@
 #import '@blocks/HeadingBlock/HeadingBlock.fragment.gql'
 
 query Home($locale: SiteLocale!) {
-  page: home(locale: $locale) {
-    title
-    body {
-        __typename
-        ...CardBlock
-        ...HeadingBlock
+    site: _site {
+      favicon: faviconMetaTags {
+        attributes
+        content
+        tag
+      }
     }
-  }
+    page: home(locale: $locale) {
+        seo: _seoMetaTags {
+            attributes
+            content
+            tag
+        }
+        title
+        body {
+            __typename
+            ...CardBlock
+            ...HeadingBlock
+        }
+    }
 }

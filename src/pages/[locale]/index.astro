@@ -10,9 +10,9 @@ export const getStaticPaths = () => site.locales.map((locale) => ({ params: { lo
 
 const { locale } = Astro.params as { locale: Locale };
 
-const { page } = await get(query, { locale });
+const { site, page } = await get(query, { locale });
 ---
 
-<Base {locale}>
+<Base {locale} {site} {page}>
 	<Blocks blocks={page.body} />
 </Base>
