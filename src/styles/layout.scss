@@ -25,4 +25,10 @@ body > footer {
 main > *,
 footer > * {
 	grid-column: main;
+	height: fit-content;
+}
+
+body > main {
+    padding-block: 3rem;
+    row-gap: 3rem;
 }

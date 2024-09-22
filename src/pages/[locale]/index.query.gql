@@ -1,5 +1,6 @@
 #import '@blocks/CardBlock/CardBlock.fragment.gql'
 #import '@blocks/HeadingBlock/HeadingBlock.fragment.gql'
+#import '@blocks/SectionBlock/SectionBlock.fragment.gql'
 
 query Home($locale: SiteLocale!) {
     site: _site {
@@ -20,6 +21,7 @@ query Home($locale: SiteLocale!) {
             __typename
             ...CardBlock
             ...HeadingBlock
+            ...SectionBlock
         }
     }
 }

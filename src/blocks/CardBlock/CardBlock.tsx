@@ -1,4 +1,5 @@
 import { StructuredText } from "react-datocms";
+import Styles from "./CardBlock.module.scss";
 
 interface Props {
   title: string;
@@ -7,7 +8,7 @@ interface Props {
 
 const CardBlock = ({ title, body }: Props) => {
   return (
-    <article>
+    <article className={Styles.card}>
       <h3>{title}</h3>
       <StructuredText data={body} />
     </article>

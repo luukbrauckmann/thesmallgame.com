@@ -1,0 +1,9 @@
+#import '@blocks/CardBlock/CardBlock.fragment.gql'
+
+fragment SectionBlock on SectionRecord {
+    title
+    body {
+        __typename
+        ...CardBlock
+    }
+}
