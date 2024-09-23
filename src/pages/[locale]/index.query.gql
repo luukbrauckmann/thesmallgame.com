@@ -3,7 +3,7 @@
 #import '@blocks/SectionBlock/SectionBlock.fragment.gql'
 
 query Home($locale: SiteLocale!) {
-    site: _site {
+    _site {
       favicon: faviconMetaTags {
         attributes
         content
