@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 
 import cloudflare from '@astrojs/cloudflare';
 import preact from '@astrojs/preact';
@@ -11,7 +11,9 @@ export default defineConfig({
 	devToolbar: {
 		enabled: false
 	},
-
+	image: {
+    service: passthroughImageService()
+  },
 	integrations: [preact({ compat: true })],
 	vite: {
 	  plugins: [graphql()]
