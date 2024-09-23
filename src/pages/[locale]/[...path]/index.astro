@@ -1,0 +1,18 @@
+---
+import { get } from '@scripts/datocms';
+import { pages } from '@data';
+import { Base } from '@layouts';
+import { Blocks } from '@blocks';
+import type { Locale } from '@types';
+import query from './index.query.gql';
+
+export const getStaticPaths = () => pages.map(({ locale, value }) => ({ params: { locale, path: value } }));
+
+const { locale, path } = Astro.params as { locale: Locale, path: string };
+const slug = path.split('/').filter(Boolean).pop() as string;
+const { _site, page } = await get(query, { locale, slug });
+---
+
+<Base {locale} site={_site} {page}>
+	<Blocks blocks={page.body} />
+</Base>

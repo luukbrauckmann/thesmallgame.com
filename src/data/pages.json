@@ -1,0 +1,18 @@
+[
+  {
+    "locale": "en",
+    "value": "registrer"
+  },
+  {
+    "locale": "nl",
+    "value": "registreren"
+  },
+  {
+    "locale": "en",
+    "value": "login"
+  },
+  {
+    "locale": "nl",
+    "value": "inloggen"
+  }
+]
