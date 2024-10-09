@@ -1,0 +1,17 @@
+---
+import { logger } from '@scripts';
+const { blocks } = Astro.props;
+---
+
+{
+	blocks.map(async (block: any) => {
+		const blockName = block.__typename.replace('Record', '');
+		try {
+			const Block = (await import(`./${blockName}/${blockName}.astro`)).default;
+			return <Block {...block} />;
+		} catch {
+			logger.error(`Can't find './${blockName}/${blockName}.astro'`);
+			return null;
+		}
+	})
+}

@@ -1,17 +1,10 @@
-/// <reference path="../.astro/types.d.ts" />
-
 interface ImportMetaEnv {
-  readonly DATOCMS_API_KEY: string;
+	readonly DATOCMS_URL: string;
+	readonly DATOCMS_API_KEY: string;
+	readonly SUPABASE_URL: string;
+	readonly SUPABASE_ANON_KEY: string;
 }
 
-declare module '*.gql' {
-  import { DocumentNode } from 'graphql';
-  const value: DocumentNode;
-  export default value;
-}
-
-declare module '*.graphql' {
-  import { DocumentNode } from 'graphql';
-  const value: DocumentNode;
-  export default value;
+interface ImportMeta {
+	readonly env: ImportMetaEnv;
 }

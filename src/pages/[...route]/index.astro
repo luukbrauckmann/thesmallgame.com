@@ -1,0 +1,17 @@
+---
+import { Base } from '@layouts';
+import routes from '@data/routes.json';
+const { route } = Astro.params;
+
+let page;
+
+if (!routes.includes(route as string)) {
+	Astro.response.status = 404;
+} else {
+	page = (await import(`../../../.data/pages/${route}.json`)).default;
+}
+---
+
+<Base title="Welcome">
+	<pre>{JSON.stringify(page, null, 2)}</pre>
+</Base>
