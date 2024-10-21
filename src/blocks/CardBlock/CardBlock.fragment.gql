@@ -1,8 +1,0 @@
-fragment CardBlock on CardRecord {
-    title
-    body {
-      blocks
-      links
-      value
-    }
-}
