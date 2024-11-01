@@ -1,17 +1,17 @@
 {
-  "name": "nuxt-app",
-  "private": true,
+  "name": "thesmallgame.com",
   "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "nuxt": "^3.13.2",
-    "vue": "latest",
-    "vue-router": "latest"
+    "astro": "^5.0.0-beta.6"
+  },
+  "devDependencies": {
+    "@astrojs/ts-plugin": "^1.10.4"
   }
 }
